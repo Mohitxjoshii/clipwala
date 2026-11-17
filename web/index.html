@@ -841,6 +841,7 @@ label.ck,.seg,.range label,.tile-o,.nstep{background:#111E30;color:var(--text)}
 .pick-new:hover,.pick-new:focus-visible{background:rgba(87,232,221,.12);color:#9AF5ED}
 .pick-new .av,.pick-opt .av{background:rgba(87,232,221,.14);color:#9AF5ED}
 .tile-o:enabled:hover,.tile-o:focus-visible,.ntoast:hover,.nt:hover{background:#192A3F;color:var(--text)}
+.step:hover,.step:focus-visible{background:#192A3F;color:var(--text)}
 .tile-o[aria-pressed=true],label.ck:has(input:checked){background:var(--brand-soft);border-color:var(--brand-line);color:var(--brand-ink)}
 .utabs .tabbtn:hover{background:#192A3F;color:var(--text)}
 .ttabs .tabbtn:hover{background:#192A3F;color:var(--text)}
@@ -917,7 +918,7 @@ tr:hover>td{background:#142238}
 <body>
 <div class="app" id="app">
   <aside class="side" aria-label="Sidebar">
-    <div class="side-head"><img class="logo" src="/brand/logo-light.svg" alt="ClipWala"><img class="mark" src="/brand/favicon.svg" alt="ClipWala">
+    <div class="side-head"><img class="logo" src="/brand/logo-light.svg?v=clipwala-2" alt="ClipWala"><img class="mark" src="/brand/favicon.svg?v=clipwala-2" alt="ClipWala">
       <button class="icon-btn collapse" data-act="collapse" id="collapseBtn" aria-label="Collapse sidebar"></button></div>
     <nav class="nav" id="nav" aria-label="Main"></nav>
     <div class="side-foot" id="foot"></div>
@@ -2524,7 +2525,7 @@ document.addEventListener("click", async e => {
     if (a === "storsave") {
       const s = await send("/api/storage", {path: $("#stor_new").value, move: $("#stor_move").checked}, "PUT");
       S.storOpen = false; toast("Saved. Close ClipWala and start it again to switch to the new folder.", "ok"); return drawSettings();
-    }
+s    }
     if (a === "storcancel") { await send("/api/storage", {cancel: true}, "PUT"); toast("Kept the current folder", "ok"); return drawSettings(); }
     if (a === "appsetup") { S.setupOpen = d.p && S.setupOpen !== d.p ? d.p : ""; return drawSettings(); }
     if (a === "copytext") { await navigator.clipboard.writeText(d.t); return toast("Copied", "ok"); }
