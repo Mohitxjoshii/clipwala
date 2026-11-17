@@ -13,10 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY studio studio
 COPY web web
 
-ENV PEAKCUT_DATA=/data \
-    PEAKCUT_HOST=0.0.0.0 \
-    PEAKCUT_PORT=8765 \
-    PEAKCUT_TRUST_PROXY=1 \
+ENV CLIPWALA_DATA=/data \
+    CLIPWALA_HOST=0.0.0.0 \
+    CLIPWALA_PORT=8765 \
+    CLIPWALA_TRUST_PROXY=1 \
     PYTHONUNBUFFERED=1
 VOLUME /data
 EXPOSE 8765

@@ -1,8 +1,8 @@
 """Security hardening: who is asking (rate limits), email addresses, Google sign-in, and text going into AI prompts.
 Runs against the code directly, with its own empty data folder: nothing outside it is touched."""
 import os, sys, tempfile, time
-os.environ["PEAKCUT_DATA"] = tempfile.mkdtemp(prefix="pc-hard-"); os.environ["DATABASE_URL"] = ""
-os.environ["PEAKCUT_TRUST_PROXY"] = "1"; os.environ["PEAKCUT_CLIENT_IP_HEADER"] = "CF-Connecting-IP"
+os.environ["CLIPWALA_DATA"] = tempfile.mkdtemp(prefix="pc-hard-"); os.environ["DATABASE_URL"] = ""
+os.environ["CLIPWALA_TRUST_PROXY"] = "1"; os.environ["CLIPWALA_CLIENT_IP_HEADER"] = "CF-Connecting-IP"
 os.environ["GOOGLE_CLIENT_ID"] = "id"; os.environ["GOOGLE_CLIENT_SECRET"] = "secret"
 sys.path.insert(0, ".")
 import sqlalchemy as sa

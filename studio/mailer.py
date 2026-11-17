@@ -1,8 +1,8 @@
 """Sending account emails (verify your address, reset your password) over SMTP.
 
 Works with any provider that offers SMTP: Resend, Postmark, Brevo, Amazon SES, Google Workspace and so on. Set
-PEAKCUT_SMTP_HOST, PEAKCUT_SMTP_PORT (587), PEAKCUT_SMTP_USER, PEAKCUT_SMTP_PASSWORD_FILE (a file holding the
-password or API key) and PEAKCUT_MAIL_FROM ("Clipwala <hello@yourdomain.com>"). Without them nothing is sent and the
+CLIPWALA_SMTP_HOST, CLIPWALA_SMTP_PORT (587), CLIPWALA_SMTP_USER, CLIPWALA_SMTP_PASSWORD_FILE (a file holding the
+password or API key) and CLIPWALA_MAIL_FROM ("Clipwala <hello@yourdomain.com>"). Without them nothing is sent and the
 link is written to the server log instead, which is enough for running Clipwala on your own machine."""
 import html
 import logging
@@ -14,7 +14,7 @@ from email.utils import formataddr, getaddresses, make_msgid, parseaddr
 
 from . import config
 
-log = logging.getLogger("peakcut.mail")
+log = logging.getLogger("clipwala.mail")
 
 
 def ready() -> bool:
